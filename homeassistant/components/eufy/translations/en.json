@@ -1,0 +1,17 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Failed to connect",
+            "invalid_auth": "Incorrect username or password"
+        },
+        "step": {
+            "user": {
+                "title": "Enter your Eufy login information",
+                "data": {
+                    "password": "Password",
+                    "username": "Email"
+                }
+            }
+        }
+    }
+}

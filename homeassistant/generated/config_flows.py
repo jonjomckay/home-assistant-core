@@ -102,6 +102,7 @@ FLOWS = {
         "epson",
         "escea",
         "esphome",
+        "eufy",
         "evil_genius_labs",
         "ezviz",
         "faa_delays",

@@ -1,30 +1,30 @@
-"""Support for Eufy switches."""
+"""Support for Eufy vacuums."""
 from __future__ import annotations
 from homeassistant.components.eufy.api import LakesideSwitch
 
-from homeassistant.components.switch import SwitchEntity
+from homeassistant.components.vacuum import VacuumEntity
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 
 
-def setup_platform(
+async def async_setup_platform(
     hass: HomeAssistant,
     config: ConfigType,
     add_entities: AddEntitiesCallback,
     discovery_info: DiscoveryInfoType | None = None,
 ) -> None:
-    """Set up Eufy switches."""
+    """Set up Eufy vacuums."""
     if discovery_info is None:
         return
-    add_entities([EufySwitch(discovery_info)], True)
+    add_entities([EufyVacuum(discovery_info)], True)
 
 
-class EufySwitch(SwitchEntity):
-    """Representation of a Eufy switch."""
+class EufyVacuum(VacuumEntity):
+    """Representation of a Eufy vacuum."""
 
     def __init__(self, device):
-        """Initialize the light."""
+        """Initialize the vacuum."""
 
         self._state = None
         self._name = device["name"]
@@ -41,7 +41,7 @@ class EufySwitch(SwitchEntity):
 
     @property
     def unique_id(self):
-        """Return the ID of this light."""
+        """Return the ID of this vacuum."""
         return self._address
 
     @property

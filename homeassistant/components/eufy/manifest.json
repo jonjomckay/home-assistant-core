@@ -2,8 +2,14 @@
   "domain": "eufy",
   "name": "eufy",
   "documentation": "https://www.home-assistant.io/integrations/eufy",
-  "requirements": ["lakeside==0.12"],
+  "requirements": [
+    "lakeside==0.12",
+    "protobuf==3.20.1",
+    "pycryptodome==3.15.0",
+    "requests==2.28.1"
+  ],
   "codeowners": [],
+  "config_flow": true,
   "iot_class": "local_polling",
   "loggers": ["lakeside"]
 }
